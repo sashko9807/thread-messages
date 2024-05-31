@@ -1,0 +1,24 @@
+@use "../abstracts/colors.scss" as *;
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.74rem;
+}
+h3 {
+  font-size: 1.52rem;
+}
+h4 {
+  font-size: 1.32rem;
+}
+h5 {
+  font-size: 1.15rem;
+}
+h6 {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+p {
+  font-size: 1rem;
+  color: $textPrimary;
+}
