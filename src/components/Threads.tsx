@@ -5,8 +5,8 @@ import ThreadCard from "./ThreadCard";
 type ThreadProps = {
   threads: Thread[];
 };
-
 type ThreadState = "expanded" | "collapsed";
+
 export default function Threads({ threads }: ThreadProps) {
   const [thread, setThread] = useState<ThreadState>(
     threads.length > 1 ? "collapsed" : "expanded"

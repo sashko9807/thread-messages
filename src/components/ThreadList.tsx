@@ -1,12 +1,18 @@
 import Threads from "./Threads";
-import threadMock from "../__tests__/threadMock";
+
 import "../sass/components/thread.scss";
+import { useFetchThreads } from "../common/hooks/useFetchThread";
 
 export default function ThreadList() {
+  const [threads, isLoading, error] = useFetchThreads();
+  console.log(error);
+
+  if (isLoading) return null;
+  if (error) return null;
   return (
     <div className="container">
       <ul className="inner-container">
-        {threadMock.threads.map((thread, index) => (
+        {threads.map((thread, index) => (
           <li key={index} className="thread-container">
             <Threads threads={thread} />
           </li>
