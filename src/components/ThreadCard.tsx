@@ -8,6 +8,7 @@ type ThreadCardProps = {
   mCount: number;
   showLabel: boolean;
   collapsed: boolean;
+  cardNumber?: number;
 };
 export default function ThreadCard({
   thread,
@@ -15,6 +16,7 @@ export default function ThreadCard({
   mCount,
   showLabel,
   collapsed,
+  cardNumber = 0,
 }: ThreadCardProps) {
   const createdAt = new Date(thread.created_at);
   const month = createdAt.toLocaleString("en-US", { month: "short" });
@@ -22,18 +24,27 @@ export default function ThreadCard({
   const dayWithSuffix = `${day}${addSuffixToDate(day)}`;
   const isCollapsed = collapsed && !showLabel ? "collapsed" : "";
   return (
-    <article className="card ">
+    <article id="thread-card" className="card">
       <ThreadCountLabel show={showLabel} score={score} messagesCount={mCount} />
       <div className={`col1 ${isCollapsed}`} data-testid="card-col">
         <div>
-          <h1 className={`h5 card_title--${score}`}>{thread.subject}</h1>
-          <p className="card--question">{thread.question}</p>
+          <h1 id={`title-${cardNumber}`} className={`h5 card_title--${score}`}>
+            {thread.subject}
+          </h1>
+          <p id={`question-${cardNumber}`} className="card--question">
+            {thread.question}
+          </p>
         </div>
-        <p>{thread.text}</p>
+        <p id="text">{thread.text}</p>
       </div>
       <div className={`col2 ${isCollapsed}`} data-testid="card-col">
-        <span className={`card_team`}>{thread.team}</span>
-        <span className={`card_created-at`}>{`${month} ${dayWithSuffix}`}</span>
+        <span id="team" className={`card_team`}>
+          {thread.team}
+        </span>
+        <span
+          id="created_at"
+          className={`card_created-at`}
+        >{`${month} ${dayWithSuffix}`}</span>
       </div>
     </article>
   );
