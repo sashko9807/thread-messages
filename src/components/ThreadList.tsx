@@ -13,7 +13,7 @@ export default function ThreadList() {
       <ul className="inner-container">
         {threads.map((thread, index) => (
           <li key={index} className="thread-container">
-            <Threads threads={thread} />
+            <Threads threads={thread} itemNum={index} />
           </li>
         ))}
       </ul>

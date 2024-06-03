@@ -8,7 +8,7 @@ import Threads from "../components/Threads";
 describe("Threads", () => {
   it("Should collapse if thread has more than 1 message ", () => {
     const threads = threadMock.threads[0];
-    render(<Threads threads={threads} />);
+    render(<Threads threads={threads} itemNum={0} />);
     const threadList = screen.getByRole("list");
     expect(threadList).toBeInTheDocument();
     expect(threadList).toHaveClass("thread_stack--collapsed");
@@ -16,7 +16,7 @@ describe("Threads", () => {
 
   it("Should expand if clicked ", () => {
     const threads = threadMock.threads[0];
-    render(<Threads threads={threads} />);
+    render(<Threads threads={threads} itemNum={0} />);
     const threadList = screen.getByRole("list");
     expect(threadList).toBeInTheDocument();
     expect(threadList).toHaveClass("thread_stack--collapsed");
