@@ -40,7 +40,7 @@
 .card {
   @extend %thread-card;
   @include borderRadius(15px);
-  @include py(1.5em);
+  @include py(1.2em);
   @include px(1em);
   min-height: 114px;
 
