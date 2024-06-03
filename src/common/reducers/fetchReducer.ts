@@ -5,7 +5,7 @@ export const ACTIONS = {
   FETCH_ERROR: "FETCH_ERROR",
 };
 
-type ThreadState<T = any> = {
+type FetchState<T = any> = {
   loading: boolean;
   error: any;
   data: T;
@@ -16,13 +16,13 @@ type Action<T> = {
   payload: T;
 };
 
-const initialState: ThreadState = {
+const initialState: FetchState = {
   data: [],
   error: null,
   loading: true,
 };
 
-const reducer = <T>(state: ThreadState<T>, action: Action<T>) => {
+const reducer = <T>(state: FetchState<T>, action: Action<T>) => {
   switch (action.type) {
     case "FETCH_SUCCESS":
       return {
@@ -43,5 +43,5 @@ const reducer = <T>(state: ThreadState<T>, action: Action<T>) => {
   }
 };
 
-export const useThreadReducer = <T>(initState = initialState) =>
+export const useFetchReducer = <T>(initState = initialState) =>
   useReducer(reducer<T>, initState);

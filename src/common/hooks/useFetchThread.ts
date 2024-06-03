@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import { useThreadReducer } from "../reducers/threadReducer";
+import { useFetchReducer } from "../reducers/fetchReducer";
 import { Thread } from "../types/thread";
 
 export const useFetchThreads = () => {
-  const [state, dispatch] = useThreadReducer<Thread[][]>();
+  const [state, dispatch] = useFetchReducer<Thread[][]>();
 
   useEffect(() => {
     const controller = new AbortController();
