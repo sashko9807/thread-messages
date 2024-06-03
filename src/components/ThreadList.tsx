@@ -5,7 +5,6 @@ import { useFetchThreads } from "../common/hooks/useFetchThread";
 
 export default function ThreadList() {
   const [threads, isLoading, error] = useFetchThreads();
-  console.log(error);
 
   if (isLoading) return null;
   if (error) return null;
