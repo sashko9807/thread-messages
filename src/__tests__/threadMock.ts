@@ -398,4 +398,4 @@ const thread: Thread[][] = [
       id: "5cab51c2a59a5a15555943ee",
     },
   ],
-];
+] as Thread[][];

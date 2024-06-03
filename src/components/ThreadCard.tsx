@@ -24,14 +24,14 @@ export default function ThreadCard({
   return (
     <article className="card ">
       <ThreadCountLabel show={showLabel} score={score} messagesCount={mCount} />
-      <div className={`col1 ${isCollapsed}`}>
+      <div className={`col1 ${isCollapsed}`} data-testid="card-col">
         <div>
           <h1 className={`h5 card_title--${score}`}>{thread.subject}</h1>
           <p className="card--question">{thread.question}</p>
         </div>
         <p>{thread.text}</p>
       </div>
-      <div className={`col2 ${isCollapsed}`}>
+      <div className={`col2 ${isCollapsed}`} data-testid="card-col">
         <span className={`card_team`}>{thread.team}</span>
         <span className={`card_created-at`}>{`${month} ${dayWithSuffix}`}</span>
       </div>
