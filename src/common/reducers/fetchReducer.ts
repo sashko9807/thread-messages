@@ -22,7 +22,10 @@ const initialState: FetchState = {
   loading: true,
 };
 
-const reducer = <T, E>(state: FetchState<T, E>, action: Action<T, E>) => {
+const reducer = <T, E>(
+  state: FetchState<T, E>,
+  action: Action<T, E>
+): FetchState<T, E> => {
   switch (action.type) {
     case "FETCH_SUCCESS":
       return {
