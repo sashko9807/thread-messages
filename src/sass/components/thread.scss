@@ -10,7 +10,6 @@
   overflow: auto;
   flex-grow: 1;
   flex-direction: column;
-  align-items: center;
   display: flex;
   max-width: 768px;
   gap: $threadSpacing;
@@ -18,7 +17,6 @@
 
 .thread-container {
   min-width: 320px;
-  align-self: stretch;
 }
 
 .thread_stack {
