@@ -37,7 +37,7 @@
 
 .card {
   @extend %thread-card;
-  @include borderRadius(15px);
+  @include borderRadius(8px);
   @include py(1.2em);
   @include px(1em);
   min-height: 114px;
@@ -84,7 +84,7 @@
     min-width: 170px;
     display: flex;
     justify-content: center;
-    @include borderRadius(45px);
+    @include borderRadius(12px);
     @include py(5px);
     @include px(5px);
   }
